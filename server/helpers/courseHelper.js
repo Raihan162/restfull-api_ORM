@@ -3,7 +3,11 @@ const db = require('../../models/index');
 const getCourse = async () => {
     try {
         const response = await db.courses.findAll({
-            include: [{ model: db.lecturers }]
+            include: {
+                model: db.lecturers,
+                attributes: ['name', 'contact']
+            },
+            attributes: ['id', 'title']
         });
 
         return Promise.resolve(response);
