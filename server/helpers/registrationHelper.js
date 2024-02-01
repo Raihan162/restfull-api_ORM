@@ -12,7 +12,7 @@ const getRegistration = async () => {
         return Promise.resolve(response);
     } catch (error) {
         return Promise.reject(error);
-    }
+    };
 };
 
 const addRegistration = async (students_id, courses_id) => {
@@ -25,7 +25,7 @@ const addRegistration = async (students_id, courses_id) => {
 
         if (!checkStudent) {
             throw new Error('Student doesn`t exist')
-        }
+        };
 
         const checkCourse = await db.courses.findOne({
             where: {
@@ -45,7 +45,7 @@ const addRegistration = async (students_id, courses_id) => {
         return Promise.resolve(response);
     } catch (error) {
         return Promise.reject(error);
-    }
+    };
 };
 
 const deleteRegistration = async (id) => {
@@ -58,7 +58,7 @@ const deleteRegistration = async (id) => {
 
         if (!checkRegistration) {
             throw new Error('Registration doesn`t exist');
-        }
+        };
 
         await db.registrations.destroy({
             where: {
@@ -69,7 +69,7 @@ const deleteRegistration = async (id) => {
         return Promise.resolve([]);
     } catch (error) {
         return Promise.reject(error);
-    }
+    };
 };
 
 const updateRegistration = async (id, students_id, courses_id) => {

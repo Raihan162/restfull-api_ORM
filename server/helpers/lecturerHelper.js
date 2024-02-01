@@ -1,14 +1,13 @@
 const db = require('../../models/index');
 
 const getLecturerList = async () => {
-
     try {
         const response = await db.lecturers.findAll();
 
         return Promise.resolve(response);
     } catch (error) {
         return Promise.reject(error);
-    }
+    };
 };
 
 const addLecturer = async (name, contact) => {
@@ -21,7 +20,7 @@ const addLecturer = async (name, contact) => {
         return Promise.resolve(response);
     } catch (error) {
         return Promise.reject(error);
-    }
+    };
 };
 
 const updateLecturer = async (id, name, contact) => {
@@ -48,7 +47,7 @@ const updateLecturer = async (id, name, contact) => {
         return Promise.resolve([]);
     } catch (error) {
         return Promise.reject(error);
-    }
+    };
 };
 
 const deleteLecturer = async (id) => {
@@ -72,7 +71,7 @@ const deleteLecturer = async (id) => {
         return Promise.resolve([]);
     } catch (error) {
         return Promise.reject(error);
-    }
+    };
 };
 
 module.exports = {

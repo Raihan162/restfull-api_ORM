@@ -9,7 +9,7 @@ const getCourse = async () => {
         return Promise.resolve(response);
     } catch (error) {
         return Promise.reject(error);
-    }
+    };
 };
 
 const addCourse = async (title, lecturers_id) => {
@@ -32,7 +32,7 @@ const addCourse = async (title, lecturers_id) => {
         return Promise.resolve([]);
     } catch (error) {
         return Promise.reject(error);
-    }
+    };
 };
 
 const deleteCourses = async (id) => {
@@ -56,7 +56,7 @@ const deleteCourses = async (id) => {
         return Promise.resolve([]);
     } catch (error) {
         return Promise.reject(error);
-    }
+    };
 };
 
 const updateCourses = async (id, title, lecturers_id) => {
@@ -81,7 +81,7 @@ const updateCourses = async (id, title, lecturers_id) => {
             if (!checkLecturer) {
                 throw new Error('Lecturer doesn`t exist');
             };
-        }
+        };
 
 
         await db.courses.update({
@@ -96,7 +96,7 @@ const updateCourses = async (id, title, lecturers_id) => {
         return Promise.resolve([]);
     } catch (error) {
         return Promise.reject(error);
-    }
+    };
 };
 
 module.exports = {
