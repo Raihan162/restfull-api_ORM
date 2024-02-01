@@ -13,10 +13,10 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       this.hasMany(models.registrations, {
         foreignKey: 'courses_id'
-      })
-      this.belongsTo(models.lecturers, {
-        foreignKey: 'lecturers_id'
-      })
+      }),
+        this.belongsTo(models.lecturers, {
+          foreignKey: 'lecturers_id'
+        })
     }
   }
   courses.init({

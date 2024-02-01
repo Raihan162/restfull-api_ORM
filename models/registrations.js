@@ -13,12 +13,12 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       this.belongsTo(models.students, {
         foreignKey: 'students_id'
-      })
-      this.belongsTo(models.courses, {
-        foreignKey: 'courses_id'
-      })
-    }
-  }
+      }),
+        this.belongsTo(models.courses, {
+          foreignKey: 'courses_id'
+        })
+    };
+  };
   registrations.init({
     students_id: DataTypes.INTEGER,
     courses_id: DataTypes.INTEGER,

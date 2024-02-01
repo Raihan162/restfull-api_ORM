@@ -9,6 +9,7 @@ const Port = process.env.NODEJS_PORT || 8080;
 const Student = require('./server/api/student');
 const Lecturer = require('./server/api/lecturer');
 const Course = require('./server/api/course');
+const Registration = require('./server/api/registration');
 
 dotenv.config();
 
@@ -74,6 +75,7 @@ app.use((req, res, next) => {
 app.use('/student', Student);
 app.use('/lecturer', Lecturer);
 app.use('/course', Course);
+app.use('/registration', Registration);
 
 // Sys ping api 
 app.get('/sys/ping', (req, res) => {
