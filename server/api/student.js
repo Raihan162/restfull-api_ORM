@@ -3,8 +3,6 @@ const Router = require('express').Router();
 const Validation = require('../helpers/validationHelper');
 const StudentHelper = require('../helpers/studentHelper');
 
-const fileName = 'server/api/student.js';
-
 const listStudent = async (request, reply) => {
     try {
         const response = await StudentHelper.getStudentList()
