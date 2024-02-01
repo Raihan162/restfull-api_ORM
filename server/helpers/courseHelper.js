@@ -71,13 +71,13 @@ const updateCourses = async (id, title, lecturers_id) => {
             throw new Error('Course doesn`t exist');
         };
 
-        const checkLecturer = await db.lecturers.findOne({
-            where: {
-                id: lecturers_id
-            }
-        });
-
         if (lecturers_id) {
+            const checkLecturer = await db.lecturers.findOne({
+                where: {
+                    id: lecturers_id
+                }
+            });
+
             if (!checkLecturer) {
                 throw new Error('Lecturer doesn`t exist');
             };
@@ -86,7 +86,7 @@ const updateCourses = async (id, title, lecturers_id) => {
 
         await db.courses.update({
             title: title ? title : checkCourse?.dataValues.title,
-            lecturers_id: lecturers_id ? lecturers_id : checkLecturer?.dataValues.id
+            lecturers_id: lecturers_id ? lecturers_id : checkCourse?.dataValues.id
         }, {
             where: {
                 id: id
