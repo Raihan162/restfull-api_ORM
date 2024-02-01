@@ -8,7 +8,7 @@ const pokemonListValidation = (data) => {
 
   if (schema.validate(data).error) {
     throw Boom.badRequest(schema.validate(data).error);
-  }
+  };
 };
 
 const studentAddValidation = (data) => {
@@ -20,10 +20,22 @@ const studentAddValidation = (data) => {
 
   if (schema.validate(data).error) {
     throw Boom.badRequest(schema.validate(data).error);
-  }
+  };
+};
+
+const lecturerAddValidation = (data) => {
+  const schema = Joi.object({
+    name: Joi.string().required(),
+    contact: Joi.number().required()
+  });
+
+  if (schema.validate(data).error) {
+    throw Boom.badRequest(schema.validate(data).error);
+  };
 };
 
 module.exports = {
   pokemonListValidation,
-  studentAddValidation
+  studentAddValidation,
+  lecturerAddValidation
 };

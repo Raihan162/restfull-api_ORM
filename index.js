@@ -7,6 +7,7 @@ const Port = process.env.NODEJS_PORT || 8080;
 
 // Import routes
 const Student = require('./server/api/student');
+const Lecturer = require('./server/api/lecturer');
 
 dotenv.config();
 
@@ -70,6 +71,7 @@ app.use((req, res, next) => {
 
 // Route middlewares
 app.use('/student', Student);
+app.use('/lecturer', Lecturer);
 
 // Sys ping api 
 app.get('/sys/ping', (req, res) => {
