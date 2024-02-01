@@ -9,7 +9,7 @@ const getStudentList = async () => {
 
         return Promise.resolve(response);
     } catch (error) {
-        throw error;
+        return Promise.reject(error);
     }
 };
 
@@ -24,7 +24,7 @@ const addStudent = async (dataObject) => {
 
         return Promise.resolve(response);
     } catch (error) {
-        throw error;
+        return Promise.reject(error);
     }
 };
 
@@ -52,7 +52,7 @@ const updateStudent = async (id, name, major, contact) => {
 
         return Promise.resolve([]);
     } catch (error) {
-        throw error;
+        return Promise.reject(error);
     }
 };
 
@@ -76,7 +76,7 @@ const deleteStudent = async (id) => {
 
         return Promise.resolve([]);
     } catch (error) {
-        throw error;
+        return Promise.reject(error);
     }
 };
 

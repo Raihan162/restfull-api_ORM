@@ -11,7 +11,7 @@ const getRegistration = async () => {
 
         return Promise.resolve(response);
     } catch (error) {
-        throw error;
+        return Promise.reject(error);
     }
 };
 
@@ -44,7 +44,7 @@ const addRegistration = async (students_id, courses_id) => {
 
         return Promise.resolve(response);
     } catch (error) {
-        throw error;
+        return Promise.reject(error);
     }
 };
 
@@ -68,7 +68,7 @@ const deleteRegistration = async (id) => {
 
         return Promise.resolve([]);
     } catch (error) {
-        throw error;
+        return Promise.reject(error);
     }
 };
 
@@ -120,7 +120,7 @@ const updateRegistration = async (id, students_id, courses_id) => {
 
         return Promise.resolve([]);
     } catch (error) {
-        throw error;
+        return Promise.reject(error);
     };
 };
 

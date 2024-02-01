@@ -7,7 +7,7 @@ const getLecturerList = async () => {
 
         return Promise.resolve(response);
     } catch (error) {
-        throw error;
+        return Promise.reject(error);
     }
 };
 
@@ -20,7 +20,7 @@ const addLecturer = async (name, contact) => {
 
         return Promise.resolve(response);
     } catch (error) {
-        throw error;
+        return Promise.reject(error);
     }
 };
 
@@ -47,7 +47,7 @@ const updateLecturer = async (id, name, contact) => {
 
         return Promise.resolve([]);
     } catch (error) {
-        throw error;
+        return Promise.reject(error);
     }
 };
 
@@ -71,7 +71,7 @@ const deleteLecturer = async (id) => {
 
         return Promise.resolve([]);
     } catch (error) {
-        throw error;
+        return Promise.reject(error);
     }
 };
 
