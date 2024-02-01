@@ -4,9 +4,20 @@ const getRegistration = async () => {
     try {
         const response = await db.registrations.findAll({
             include: [
-                { model: db.students },
-                { model: db.courses }
-            ]
+                {
+                    model: db.students,
+                    attributes: ['name', 'major', 'contact']
+                },
+                {
+                    model: db.courses,
+                    attributes: ['title'],
+                    include: {
+                        model: db.lecturers,
+                        attributes: ['name', 'contact']
+                    }
+                }
+            ],
+            attributes: ['id', 'registration_date']
         });
 
         return Promise.resolve(response);
