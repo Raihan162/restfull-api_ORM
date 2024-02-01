@@ -34,8 +34,20 @@ const lecturerAddValidation = (data) => {
   };
 };
 
+const courseAddValidation = (data) => {
+  const schema = Joi.object({
+    title: Joi.string().required(),
+    lecturers_id: Joi.number().required()
+  });
+
+  if (schema.validate(data).error) {
+    throw Boom.badRequest(schema.validate(data).error);
+  };
+};
+
 module.exports = {
   pokemonListValidation,
   studentAddValidation,
-  lecturerAddValidation
+  lecturerAddValidation,
+  courseAddValidation
 };
