@@ -18,7 +18,15 @@ module.exports = (sequelize, DataTypes) => {
   }
   lecturers.init({
     name: DataTypes.STRING,
-    contact: DataTypes.STRING
+    contact: DataTypes.STRING,
+    createdAt: {
+      type: DataTypes.DATE,
+      defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
+    }
   }, {
     sequelize,
     modelName: 'lecturers',
