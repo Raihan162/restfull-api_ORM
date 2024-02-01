@@ -1,5 +1,4 @@
 const { sequelize } = require('../../models')
-const _ = require('lodash')
 
 const db = require('../../models/index')
 
