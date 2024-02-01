@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "jcwd2302",
-    "database": "phincon_academy",
+    "database": "phincon_college",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
